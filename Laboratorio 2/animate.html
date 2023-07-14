@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación</title>
+    <script src="js/jQuery v3.7.0.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#titulo").hide(); // Oculta el elemento con el id "titulo"
+            $("#foto img").width(60).height(60).click(function () {
+                // Cuando se hace clic en una imagen dentro del elemento con el id "foto"
+                $(this).animate({
+                    marginleft: "150px", // Animación: desplaza la imagen hacia la derecha
+                    width: "500PX", // Animación: aumenta el ancho de la imagen
+                    height: "200px" // Animación: aumenta la altura de la imagen
+    
+                }, 2000, function () {
+                    // Después de completar la animación anterior
+                    $("#titulo").fadeIn(1000).delay(1000).fadeOut(1000);
+                    // Muestra el elemento con el id "titulo" con una animación de fundido (fadeIn), espera 1000ms, luego oculta el elemento con una animación de fundido (fadeOut).
+                }).delay(3000); // Espera 3000ms antes de ejecutar la siguiente animación
+                $(this).animate({
+                    marginleft: "0px", // Animación: desplaza la imagen hacia la izquierda (posición inicial)
+                    width: "60PX", // Animación: reduce el ancho de la imagen (posición inicial)
+                    height: "60px" // Animación: reduce la altura de la imagen (posición inicial)
+    
+                }, 2000); // Duración de la animación: 2000ms
+                /*el CSS, segundo el tiempo,y funcion de css*/
+            });
+        });
+    </script>
+    
+    <style>
+        #titulo {
+            margin-left: 150px;
+        }
+
+        #foto p {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            font-weight: bold;
+            width: 300px;
+            background-color: rgb(155, 13, 13);
+        }
+
+        h1 {
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Prueba imagen</h1>
+    <div id="foto">
+        <img src="assets/image1.jpg" width="200" height="200" id="img1" alt="">
+        <p id="titulo">Aplicacion de tecnologias Web</p>
+    </div>
+</body>
+
+</html>

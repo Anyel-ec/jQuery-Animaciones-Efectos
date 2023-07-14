@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jQuery v3.7.0.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <style>
+        .list-group-item:hover {
+            cursor: pointer;
+            color: brown;
+        }
+        
+        .list-group-item .image-container {
+            display: none;
+        }
+        
+        .list-group-item:hover .image-container {
+            display: block;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // Para cada elemento con la clase "list-group-item" en la primera posición
+            $(".list-group-item:nth-child(1)").hover(function () {
+                $(this).find(".image-container").fadeIn("slow", "easeInOutBounce");
+                // Cuando se realiza un hover sobre el elemento, muestra gradualmente el elemento con la clase "image-container" utilizando una animación de fundido (fadeIn) con una duración de "slow" y una función de rebote (easeInOutBounce).
+            }, function () {
+                $(this).find(".image-container").fadeOut("slow", "easeInSine");
+                // Cuando se quita el hover del elemento, oculta gradualmente el elemento con la clase "image-container" utilizando una animación de fundido (fadeOut) con una duración de "slow" y una función de aceleración (easeInSine).
+            });
+    
+            // Repite el mismo patrón para los elementos en las posiciones 2, 3, 4 y 5.
+            $(".list-group-item:nth-child(2)").hover(function () {
+                $(this).find(".image-container").fadeIn("slow", "easeInOutBounce");
+            }, function () {
+                $(this).find(".image-container").fadeOut("slow", "easeInSine");
+            });
+    
+            $(".list-group-item:nth-child(3)").hover(function () {
+                $(this).find(".image-container").fadeIn("slow", "easeOutBounce");
+            }, function () {
+                $(this).find(".image-container").fadeOut("slow", "easeInSine");
+            });
+    
+            $(".list-group-item:nth-child(4)").hover(function () {
+                $(this).find(".image-container").fadeIn("slow", "easeOutBounce");
+            }, function () {
+                $(this).find(".image-container").fadeOut("slow", "easeInSine");
+            });
+    
+            $(".list-group-item:nth-child(5)").hover(function () {
+                $(this).find(".image-container").fadeIn("slow", "easeOutBounce");
+            }, function () {
+                $(this).find(".image-container").fadeOut("slow", "easeInSine");
+            });
+        });
+    </script>
+    
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <h1 style="text-align: center;">Dias de la Semana</h1>
+                <ul class="list-group">
+                    <li class="list-group-item" data-toggle="tooltip" data-placement="top" title="Imagen Lunes">
+                        Lunes
+                        <div class="image-container">
+                            <img src="assets/lunes.jpeg" alt="Imagen Lunes" width="200px" height="200px">
+                        </div>
+                    </li>
+                    <li class="list-group-item" data-toggle="tooltip" data-placement="top" title="Imagen Martes">
+                        Martes
+                        <div class="image-container">
+                            <img src="assets/martes.png" alt="Imagen Martes" width="200" height="200">
+                        </div>
+                    </li>
+                    <li class="list-group-item" data-toggle="tooltip" data-placement="top" title="Imagen Miércoles">
+                        Miércoles
+                        <div class="image-container">
+                            <img src="assets/miercoles.jpg" alt="Imagen Miércoles" width="200" height="200">
+                        </div>
+                    </li>
+                    <li class="list-group-item" data-toggle="tooltip" data-placement="top" title="Imagen Jueves">
+                        Jueves
+                        <div class="image-container">
+                            <img src="assets/jueves.jpg" alt="Imagen Jueves" width="200" height="200">
+                        </div>
+                    </li>
+                    <li class="list-group-item" data-toggle="tooltip" data-placement="top" title="Imagen Viernes">
+                        Viernes
+                        <div class="image-container">
+                            <img src="assets/viernes.png" alt="Imagen Viernes" width="200" height="200">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
